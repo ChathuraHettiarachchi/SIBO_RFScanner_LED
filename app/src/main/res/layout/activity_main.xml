@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chootdev.rfidreader.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTitleSysInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="System Information"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:layout_margin="20dp"/>
+
+                    <TextView
+                        android:id="@+id/tvSysInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text=""
+                        android:hint="System data will display here"
+                        android:layout_below="@+id/tvTitleSysInfo"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/btnTurnOff"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn off light"
+                        android:background="#000"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="5dp"/>
+
+                    <Button
+                        android:id="@+id/btnTurnRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="turn on red light"
+                        android:background="#d13131"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="5dp"/>
+
+                    <Button
+                        android:id="@+id/btnTurnGreen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="turn on green light"
+                        android:background="#21a540"
+                        android:textColor="#fff"
+                        android:layout_marginBottom="5dp"/>
+
+                    <Button
+                        android:id="@+id/btnTurnBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="turn on blue light"
+                        android:background="#005ecd"
+                        android:textColor="#fff"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtCardInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="#ccc"
+                    android:editable="false"
+                    android:ellipsize="end"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="top"
+                    android:hint="Scanned card information"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnScanCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="scan rfid card"
+                        android:background="#668b8b"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="#fff"/>
+
+                    <Button
+                        android:id="@+id/btnStopScanning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="stop scanning"
+                        android:background="#668b8b"
+                        android:textColor="#fff"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

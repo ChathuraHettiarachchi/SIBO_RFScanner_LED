@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements RFIDScanner.RFIDS
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .enableAutoReading();
 
-            edtCardInfo.append("\nAUTO-SCANNING-STRAT\n\n");
+            edtCardInfo.append("\nAUTO-SCANNING-START\n\n");
 
             scroll.post(() -> scroll.fullScroll(View.FOCUS_DOWN));
         });
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements RFIDScanner.RFIDS
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .turnOffAutoReading();
 
-            edtCardInfo.append("\nAUTO-SCANNING-STOPED\n");
+            edtCardInfo.append("\nAUTO-SCANNING-STOPPED\n");
 
             scroll.post(() -> scroll.fullScroll(View.FOCUS_DOWN));
         });

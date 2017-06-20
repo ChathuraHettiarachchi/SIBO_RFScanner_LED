@@ -139,6 +139,7 @@ public class RFIDScanner {
 
                     } catch (Exception e) {
                         e.printStackTrace();
+                        callback.onRFIDScannerFireException("System cannot initiate RFID scanner");
                     }
                 }
             }
@@ -208,7 +209,7 @@ public class RFIDScanner {
                 for (int i = 0; i < outBuffer.length; i++) {
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                callback.onRFIDScannerFireException("System cannot handle IO devices and values");
             }
         } else {
             System.out.println("sum error");
@@ -261,6 +262,7 @@ public class RFIDScanner {
                     outBuffer[i] = (byte) Integer.parseInt(k, 16);
                 } catch (Exception e) {
                     e.printStackTrace();
+                    callback.onRFIDScannerFireException("Card info and byte array mismatch");
                 }
             }
         }
@@ -269,5 +271,6 @@ public class RFIDScanner {
 
     public interface RFIDScannerCallback {
         void onRFIDScannerCatchCard(String content);
+        void onRFIDScannerFireException(String message);
     }
 }

@@ -3,6 +3,7 @@ package com.chootdev.rfidreader;
 import android.os.Bundle;
 import android.serialport.Application;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
@@ -131,5 +132,10 @@ public class MainActivity extends AppCompatActivity implements RFIDScanner.RFIDS
             edtCardInfo.append((++count)+". "+content+"\n");
 
         scroll.post(() -> scroll.fullScroll(View.FOCUS_DOWN));
+    }
+
+    @Override
+    public void onRFIDScannerFireException(String message) {
+        Log.e("Error", message);
     }
 }

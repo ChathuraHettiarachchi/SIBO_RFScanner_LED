@@ -109,62 +109,76 @@
             android:orientation="vertical"
             android:layout_weight="1">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/edtCardInfo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:background="#ccc"
-                    android:editable="false"
-                    android:ellipsize="end"
-                    android:ems="10"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:gravity="top"
-                    android:hint="Scanned card information"
-                    android:inputType="textMultiLine"
-                    android:padding="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:padding="10dp">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_above="@+id/lay"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btnScanCard"
+                    <ScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="scan rfid card"
-                        android:background="#668b8b"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="#fff"/>
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="#ccc"
+                        android:id="@+id/scroll">
 
-                    <Button
-                        android:id="@+id/btnStopScanning"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="stop scanning"
-                        android:background="#668b8b"
-                        android:textColor="#fff"/>
+                        <TextView
+                            android:id="@+id/edtCardInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:editable="false"
+                            android:ellipsize="end"
+                            android:ems="10"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="top"
+                            android:hint="Scanned card information"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp" />
+                    </ScrollView>
                 </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lay"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnScanCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="scan rfid card"
+                            android:background="#668b8b"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="#fff"/>
+
+                        <Button
+                            android:id="@+id/btnStopScanning"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="stop scanning"
+                            android:background="#668b8b"
+                            android:textColor="#fff"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

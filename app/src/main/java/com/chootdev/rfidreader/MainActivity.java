@@ -107,13 +107,15 @@ public class MainActivity extends AppCompatActivity implements RFIDScanner.RFIDS
         btnScanCard.setOnClickListener(view -> {
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .enableAutoReading();
+
+            edtCardInfo.append("AUTO-SCANNING-STRAT\n");
         });
 
         btnStopScanning.setOnClickListener(view -> {
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .turnOffAutoReading();
-            edtCardInfo.setText("");
-            count = 0;
+
+            edtCardInfo.append("AUTO-SCANNING-STOPED\n");
         });
     }
 

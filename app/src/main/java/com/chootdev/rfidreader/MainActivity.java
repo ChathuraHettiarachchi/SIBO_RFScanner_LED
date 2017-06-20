@@ -108,21 +108,25 @@ public class MainActivity extends AppCompatActivity implements RFIDScanner.RFIDS
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .enableAutoReading();
 
-            edtCardInfo.append("AUTO-SCANNING-STRAT\n");
+            edtCardInfo.append("\nAUTO-SCANNING-STRAT\n\n");
+
+            scroll.post(() -> scroll.fullScroll(View.FOCUS_DOWN));
         });
 
         btnStopScanning.setOnClickListener(view -> {
             RFIDScanner.init(this, this, ((Application) getApplication()))
                     .turnOffAutoReading();
 
-            edtCardInfo.append("AUTO-SCANNING-STOPED\n");
+            edtCardInfo.append("\nAUTO-SCANNING-STOPED\n");
+
+            scroll.post(() -> scroll.fullScroll(View.FOCUS_DOWN));
         });
     }
 
     @Override
     public void onRFIDScannerCatchCard(String content) {
         if (count == 0)
-            edtCardInfo.setText("Scanned card inf0\n\n"+(++count)+". "+content+"\n");
+            edtCardInfo.setText("Scanned card infomation,\n\n"+(++count)+". "+content+"\n");
         else
             edtCardInfo.append((++count)+". "+content+"\n");
 

@@ -125,13 +125,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/lay"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Scanner results"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:padding="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ccc"/>
 
                     <ScrollView
                         android:id="@+id/scroll"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="#ccc">
 
@@ -145,7 +160,7 @@
                             android:focusable="false"
                             android:focusableInTouchMode="false"
                             android:gravity="top"
-                            android:hint="Scanned card information"
+                            android:hint="Please tap a card to scan."
                             android:inputType="textMultiLine"
                             android:padding="10dp" />
                     </ScrollView>

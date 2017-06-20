@@ -112,10 +112,12 @@ public class RFIDScanner {
         return scanner;
     }
 
-    public static void startScannerReading() {
+    public static RFIDScanner startScannerReading() {
         if (currentSystemStatus) {
             readRFIDThread();
         }
+
+        return scanner;
     }
 
     public static void readRFIDThread() {
@@ -173,7 +175,8 @@ public class RFIDScanner {
             mHandler.sendEmptyMessageDelayed(0, 100);
             stxCheck = true;
         } else if (stxCheck == false) {
-            mHandler.sendEmptyMessage(3);
+            //mHandler.sendEmptyMessage(3); // original
+            mHandler.sendEmptyMessageDelayed(0, 100);
         }
     }
 

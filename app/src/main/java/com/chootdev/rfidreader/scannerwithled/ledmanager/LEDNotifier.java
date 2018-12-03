@@ -18,16 +18,20 @@ public class LEDNotifier {
     private static Context context;
     private static SmdtManager manager;
 
-    public static LEDNotifier init(Context appContext) {
-        if (notifier != null) {
-            context = appContext;
-            manager.create(context);
-            return notifier;
-        } else {
-            context = appContext;
-            notifier = new LEDNotifier();
-            manager = SmdtManager.create(appContext);
-            return notifier;
+    public static LEDNotifier init(Context appContext) throws LEDNotifierException {
+        try {
+            if (notifier != null) {
+                context = appContext;
+                manager.create(context);
+                return notifier;
+            } else {
+                context = appContext;
+                notifier = new LEDNotifier();
+                manager = SmdtManager.create(appContext);
+                return notifier;
+            }
+        } catch (Exception e) {
+            throw new LEDNotifierException("No LED service fount on this device");
         }
     }
 
